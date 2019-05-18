@@ -26,12 +26,9 @@ to begin
   set timebtwnzak random-poisson 20
   set dost random-poisson 15
 
-
   if (count zaks < telephones) and (timebtwnzak > 10) and (count kurs > 0)
   [set kolzak kolzak + 1
     create-zaks 1 [set shape "letter opened" set size 4 facexy 0 0  wait 0.5]]
-
-
 
   if count zaks > 0 [ask zaks with [who = zaktokur + telephones + kuriers + newkur ][fd 10 ]
   ;ask zaks with [who = zaktokur + telephones + kuriers + newkur + 1][fd 10 ]
@@ -62,7 +59,6 @@ labelkur] [die] ]
     set zaktokur zaktokur + 1
 ]
 
-
 if (count kurs < kuriers) and (dost > 15) [
 
     create-kurs 1 [ set label labelkur set label-color black  set shape "person service" setxy 14 random-ycor set size 3 ; set label who set bol who
@@ -75,66 +71,6 @@ if labelkur = telephones + kuriers [set labelkur telephones]
 ]
 
 end
-;  set worktime random-poisson 105
-;set vsego telephones + kuriers
-; set rest random-poisson 20
-;  if (worktime > 110) and (count kurs > telephones)
-;  [
-;    ask kurs
-;  [
-;    if (who = telephones + x  )
-;    [die]
-;    if (who < telephones * 2 + x + 1)
-;    [facexy 0 0  fd 9 wait 0.5   ]
-;
-;
-;
-;    ]
-;
-;    if count kurs < kuriers - 1 [
-;    if rest > 15 [create-kurs 1 [setxy 9 random-ycor set shape "person" set size 2
-;      ]]]
-;
-;;
-;
-;    set x x + 1
-;    set z z + 1 + count kurs
-;  ]
-;
-
-;- 1 + q
-; fd -5
-;      if who = computers + 1  [  wait 1  die]]
-;
-;ask progs[
-;    if who = computers * 2 + 1
-;    [facexy 0 0  fd 5 wait 0.5 set color black ]]
-;
-; ask progs [setxy 9 random-ycor set shape "person" set size 2 set label who set label-color black]
-;  layout-circle sort progs max-pycor - 4
-;  set q q + 1
-;  ifelse who > computers * 2
-;  []
-;  []
-;  while [who <= computers  ]
-;  [
-;    ask progs [ facexy 0 0  fd 1
-;;      layout-circle sort progs   max-pycor - 10
-;      wait 1  ]
-;  set c c + 1
-;  ]
-
-;  create-progs programmers
-;   [
-;   ask progs [setxy 9 random-ycor set shape "person" set size 2 set color black]
-;    layout-circle sort progs max-pycor - 10 wait 1
-;  ]
-;  [ create-progs programmers
-;   ask progs [setxy 9 random-ycor set shape "person" set size 2]
-;layout-circle sort progs max-pycor - 2 wait 1]
-
-
-
 
 @#$#@#$#@
 GRAPHICS-WINDOW
