@@ -22,34 +22,6 @@ clear-all;очистить экран
  ask patches [ set pcolor 97];покраска экрана в синий
  ask patches with [pycor >= 8 ] [ set pcolor 68 ] ; создание берега
 
-   ;;создание обычных причалов(1)
-
-; create-prichs prich1  [ ;;создание обычных причалов число которых равно числу причалов минус грузовые причалы
-;   ask prichs[ set shape "building store" set label 12 set label-color black ]
-;    set i i + 1
-;   set size 20 / Prichal ;;определение размера причала в зависимости от числа причалов
-;   setxy -15 + (i * 35 / Prichal) 12] ;;определение положения причала в зависимости от числа причалов
-;
-;  ;set kolvo prichal - DLAGRUZ - DLAPAS
-;
-;  if kolvo < Prichal [
-;  ;;аналогично от 1 только для грузовых причалов
-; create-gruzprichs prich2 [ set shape "bulldozer top" set label 13 set label-color black
-;   set i i + 1
-;   set size 30 / Prichal
-;      setxy -15 + (i * 35 / Prichal) 12]]
-;
-; ; set Tvsego 24 * 7 * 60
-;   ; set-default-shape Pkorabl "pasazhirski"
-;    ;set-default-shape Gkorabl "gruzavoi"
-;
-;  if kolvo < prich3 [
-;  create-pasprichs DLAPAS [ set shape "house two story" set label 123 set label-color black
-;   set i i + 1
-;   set size 30 / Prichal
-;      setxy -15 + (i * 35 / Prichal) 12]]
-;--------------------------------------------------------
-
 
   ifelse  Prichal >= prichals_1 + prichals_2 + prichals_3 [
 
